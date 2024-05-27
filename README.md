@@ -22,6 +22,7 @@ References:
 - MS Learn [Azure AI Document Intelligence Overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
 - Azure AI [Document Intelligence Studio](https://documentintelligence.ai.azure.com/)
 - MS Learn Azure Form Recognizer client library v4.1.0 [Sample](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet&viewFallbackFrom=doc-intel-4.0.0#examples&preserve-view=true)
+- Azure Document Intelligence client library for .NET [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.DocumentIntelligence_1.0.0-beta.2/sdk/documentintelligence/Azure.AI.DocumentIntelligence)
 
 
 ## Setup
@@ -40,15 +41,16 @@ References:
    git clone https://github.com/your-repo/AzureAiDocumentIntelligenceMay2024.git
    cd AzureAiDocumentIntelligenceMay2024
 
-2. Add required packages:
+2. Add required packages, remember to use the "prerelease" option as per below or the "Include prerelease" checkbox in Visual Studio Manage NuGet Packages gui.
+   Most recent version of Azure.AI.DocumentIntelligence is 1.0.0-beta.2 March 5, 2024.
    ```c#
    dotnet add package Microsoft.Extensions.Configuration
    dotnet add package Microsoft.Extensions.Configuration.Json
    dotnet add package Microsoft.Extensions.DependencyInjection
-   dotnet add package Azure.AI.DocumentIntelligence
+   dotnet add package Azure.AI.DocumentIntelligence --prerelease
    dotnet add package Azure.Identity
    ```
-3. Create a Document Intelligence/Form Recognizer resource.
+3. Create a Document Intelligence/Form Recognizer resource in the Portal or with AZ CLI:
    You may wish to use the F0 SKU for limted free use while experimenting.
    ```
    az cognitiveservices account create \
